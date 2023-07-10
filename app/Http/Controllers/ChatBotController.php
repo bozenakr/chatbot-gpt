@@ -12,7 +12,7 @@ class ChatBotController extends Controller
 
         $result = OpenAI::completions()->create([
             'max_tokens' => 100,            //simboliu skaicius atsakyme
-            'model' => 'gpt-turbo-3.5',  //modelio pavadinimas
+            'model' => 'text-davinci-003',  //modelio pavadinimas
             'prompt' => $request->input     //prompt
             //rezultatas tai OpenAI\API\Response objektas
         ]);
@@ -21,6 +21,7 @@ class ChatBotController extends Controller
             $result->toArray()['choices'],
             fn(string $result, array $choice) => $result . $choice['text'], ""
         );
-        dd($response);
+        // dd($response);
+        return $response;
     }
 }

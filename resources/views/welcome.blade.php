@@ -54,19 +54,17 @@
 </body>
 </head>
 </html>
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+
 <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <script>
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    });
-
+    })
     $('#button-submit').on('click', function() {
         $value = $('#input').val();
-        $('#content-box').append('<div class="mb-2"><div class="float-right px-3 py-2" style="width: 270px; background: #4acfee; border-radius: 10px; float: right; font-size: 80%;">' + $value + '</div><div style="clear: both;"></div></div>');
+        $('#content-box').append('<div class="mb-2"><div class="float-right px-3 py-2" style="width: 270px; background: #4acfee; border-radius: 10px; float: right; font-size: 80%;">'+$value+'</div><div style="clear: both;"></div></div>');
         $.ajax({
             type: 'post',
             url: '{{url('send')}}',
@@ -74,8 +72,8 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
                 'input': $value
             },
             success: function(data) {
-                $('#content-box').append('<div class="d-flex mb-2"><div class="mr-2" style="width: 50px; height: 50px;"><img src="https://media.istockphoto.com/id/1250000899/vector/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-vector.jpg?s=170667a&w=0&k=20&c=mBC-3kaZ9ZeGVA8Oo-O3S17sh-gzAow4d-L-4cACP57M=" width="100%" height="100%" style="border-radius: 50px;"></div><div class="text-white px-3 py-2" style="width: 270px; background: #13254b; border-radius: 10px; font-size: 80%;">' + data + '</div></div>');
-        $value = $('#input').val();
+                $('#content-box').append('<div class="d-flex mb-2"><div class="mr-2" style="width: 50px; height: 50px;"><img src="https://media.istockphoto.com/id/1250000899/vector/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-vector.jpg?s=170667a&w=0&k=20&c=mBC-3kaZ9ZeGVA8Oo-O3S17sh-gzAow4d-L-4cACP57M=" width="100%" height="100%" style="border-radius: 50px;"></div><div class="text-white px-3 py-2" style="width: 270px; background: #13254b; border-radius: 10px; font-size: 80%;">'+data+'</div></div>')
+        $value = $('#input').val('');
             }
         });
     });
