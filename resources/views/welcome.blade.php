@@ -37,9 +37,8 @@
             </div>
         </div>
         <div style="background:#fff; height: 2px;"></div>
-        <div id="content-box" class="container-fluid p-2" style="height: calc(100vh - 120px); overflow-y: scroll;">
             <!-- content-box -->
-            <!-- content-box2 -->
+        <div id="content-box" class="container-fluid p-2" style="height: calc(100vh - 120px); overflow-y: scroll;">
         </div>
         <div class="container-fluid w-100 px-3 py-2 d-flex" style="background: #131f45; height: 62px;">
             <div class="mr-2 pl-2" style="background: #ffffff1c; width: calc(100% - 50px); border-radius: 5px;">
