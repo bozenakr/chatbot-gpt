@@ -30,9 +30,9 @@
                 <i class="fa fa angle double left text white mt-2"></i>
             </div>
             <div style="width: 50px; height: 50px;">
-                <img src="https://media.istockphoto.com/id/1250000899/vector/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-vector.jpg?s=170667a&w=0&k=20&c=mBC-3kaZ9ZeGVA8Oo-O3S17sh-gzAow4dL-4cACP57M=" width="100%" height="100%" style="border-radius: 50px;">
+                <img src="{{ asset('images/chatbot.png') }}" alt="Chatbot image" style="height: 100%, width: 100%;">
             </div>
-            <div class="text-white ml-2 mt-2">
+            <div class="text-white ml-2 mt-2" style="margin-left: 10px; padding-top: 2px;">
                 ChatBot
             </div>
         </div>
@@ -71,7 +71,7 @@
                 'input': $value
             },
             success: function(data) {
-                $('#content-box').append('<div class="d-flex mb-2"><div class="mr-2" style="width: 50px; height: 50px;"><img src="https://media.istockphoto.com/id/1250000899/vector/chat-bot-robot-avatar-in-circle-round-shape-isolated-on-white-background-stock-vector.jpg?s=170667a&w=0&k=20&c=mBC-3kaZ9ZeGVA8Oo-O3S17sh-gzAow4d-L-4cACP57M=" width="100%" height="100%" style="border-radius: 50px;"></div><div class="text-white px-3 py-2" style="width: 270px; background: #13254b; border-radius: 10px; font-size: 80%;">'+data+'</div></div>')
+                $('#content-box').append('<div class="d-flex mb-2"><div class="mr-2" style="width: 50px; height: 50px;"><img src="{{ asset('images/chatbot.png') }}" width="100%" height="100%" style="border-radius: 50px;"></div><div class="text-white px-3 py-2" style="width: 270px; background: #13254b; border-radius: 10px; font-size: 80%;">'+data+'</div></div>')
         $value = $('#input').val('');
             }
         });
